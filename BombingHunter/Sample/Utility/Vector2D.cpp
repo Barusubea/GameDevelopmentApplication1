@@ -1,5 +1,5 @@
 #include "Vector2D.h"
-#include"<math.h>"
+#include <math.h>
 
 Vector2D::Vector2D() : x(0.0f), y(0.0f)
 {
@@ -17,6 +17,7 @@ Vector2D::~Vector2D()
 {
 }
 
+//ë„ì¸
 Vector2D& Vector2D::operator=(const Vector2D& location)
 {
 	this->x = location.x;
@@ -25,6 +26,7 @@ Vector2D& Vector2D::operator=(const Vector2D& location)
 	return*this;
 }
 
+//â¡éZ
 const Vector2D Vector2D::operator+(const Vector2D& location) const
 {
 	Vector2D result = Vector2D(0.0f);
@@ -35,12 +37,10 @@ const Vector2D Vector2D::operator+(const Vector2D& location) const
 	return result;
 }
 
-Vector2D& Vector2D::operator+=(const Vector2D& location) const
+Vector2D& Vector2D::operator+=(const Vector2D& location)
 {
-	Vector2D resurt = Vector2D(0.0f);
-
-	resurt.x = this->x + location.x;
-	resurt.y = this->y + location.y;
+	this->x += location.x;
+	this->y += location.y;
 
 	return *this;
 }
@@ -55,15 +55,15 @@ const Vector2D Vector2D::operator-(const Vector2D& location) const
 	return result;
 }
 
-Vector2D Vector2D::operator-=(const Vector2D& location)
+Vector2D& Vector2D::operator-=(const Vector2D& location)
 {
 	this->x -= location.x;
 	this->y -= location.y;
 
-	return result;
+	return *this;
 }
 
-const Vector2D& Vector2D::operator*(const float& scalar) const
+const Vector2D Vector2D::operator*(const float& scalar) const
 {
 	Vector2D result = Vector2D(0.0f);
 
@@ -73,7 +73,7 @@ const Vector2D& Vector2D::operator*(const float& scalar) const
 	return result;
 }
 
-const Vector2D& Vector2D::operator*(const Vector2D location) const
+const Vector2D Vector2D::operator*(const Vector2D& location) const
 {
 	Vector2D result = Vector2D(0.0f);
 
@@ -151,6 +151,7 @@ Vector2D& Vector2D::operator/=(const Vector2D& location)
 
 }
 
+//êÆêîå^ÇÃÉfÅ[É^Ç…ïœä∑
 void Vector2D::ToInt(int* x, int* y) const
 {
 	*x = static_cast<int>(this->x);

@@ -1,10 +1,10 @@
 #pragma once
 
-#include"../GameObject.h"
+#include "../GameObject.h"
 
 class Player : public GameObject
 {
-pirvate:
+private:
 	int animation[2];		//アニメーション画像
 	int animation_count;	//アニメーション時間
 	int flip_flag;		//反転フラグ
@@ -25,6 +25,6 @@ private:
 	//移動処理
 	void Movement();
 	//アニメーション制御
-	void AnimeControl();
+	void AnimationControl();
 };
 
